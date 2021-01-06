@@ -17,13 +17,13 @@ const SignUp = () => {
 
     const onSubmit = (user) => {
         console.log(user)
-        const {name, email, phone, password} = user 
-        const newUser = {name, email, phone, password}
+        const {username, email, phone, password} = user 
+        const newUser = {username, email, phone, password}
         console.log({newUser})
         axios.post('https://pintereach-backend.herokuapp.com/', newUser)
         .then(res => {
             console.log(res.data.data[0]);
-                setValue("name", "");
+                setValue("username", "");
                 setValue("email", "");
                 setValue("phone", "");
                 setValue("password", "")
@@ -40,17 +40,17 @@ const SignUp = () => {
                <header>Sign Up</header>
                     <input 
                         type="text"
-                        name="name"
-                        placeholder = 'Name'
+                        username="username"
+                        placeholder = 'Username'
                         ref={register({
-                            required: 'Name is required'
+                            required: 'username is required'
                         })}
                         />
-                        {errors.name && <Errors>Please enter your name</Errors>}
+                        {errors.username && <Errors>Please enter your username</Errors>}
 
                         <input 
                         type="email"
-                        name="email"
+                        username="email"
                         placeholder = 'Email Address'
                         ref={register({
                             required: 'Email is required'
@@ -60,18 +60,18 @@ const SignUp = () => {
 
                         <input 
                         type="tel"
-                        name="phone"
+                        username="phone"
                         placeholder = 'Phone Number'
                         ref={register({
                             required: 'Phone Number is required'
                         })}
                         />
-                        {errors.name && <Errors>Please enter your phone number</Errors>}
+                        {errors.username && <Errors>Please enter your phone number</Errors>}
 
 
                         <input 
                         type="password"
-                        name="password"
+                        username="password"
                         placeholder = 'Password'
                         ref={register({
                             required: 'Password is required'
@@ -81,18 +81,18 @@ const SignUp = () => {
 
                         <input 
                         type="password"
-                        name="confirmPassword"
+                        username="confirmPassword"
                         placeholder = 'Confirm Password'
                         ref={register({
                             required:true
                         })}
                         />
-                        {errors.name && <Errors>Please confirm your password</Errors>}
+                        {errors.username && <Errors>Please confirm your password</Errors>}
 
                         <button type="submit">Sign Up</button>
                         
                             <p>Already have an account?
-                                <Link className = 'login' to ="/"> Log in</Link>
+                                <Link classusername = 'login' to ="/"> Log in</Link>
                              </p>
                         </form>
                         </div>

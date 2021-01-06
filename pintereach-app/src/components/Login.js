@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 const Errors = styled.span`
 color:red;
+font-size: 1rem;
 `;
 
 const Login = () => {
@@ -17,19 +18,15 @@ const Login = () => {
     
     const onSubmit = (userCredentials) => {
     console.log(userCredentials);
-    axiosWithAuth().post('/auth/login', userCredentials)
+    axiosWithAuth().post('https://pintereach-backend.herokuapp.com/auth/login', userCredentials)
     .then(res => {
         localStorage.setItem('token', res.data.token);
-        if(res.data.role === 1) {
-            setValue("email", "");
+        
+            setValue("username", "");
             setValue("password", "");
-            history.push('/admin')
-        }
-         else if ( res.data.role === 2){
-            setValue("email", "");
-            setValue("password", "");
-            history.push('/StudentDash')
-        }
+            history.push('/logged-in')
+    
+        
     })
     .catch(err => console.log(err))
     }; 
