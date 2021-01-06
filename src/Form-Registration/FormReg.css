@@ -22,9 +22,7 @@ input {
     padding: 0% 2%;
     outline: none;
 }
-textarea:focus, input:focus{
-    outline: none;
-}
+ 
 label {
     display:flex;
     justify-content: flex-start;
