@@ -1,19 +1,21 @@
 import React from 'react';
 import useArticleForm from './useArticleForm';
+import './AddArticle.css';
 
 export default function AddArticle(){
-    const { change, values, submit } = useArticleForm;
+    const { changeArticle, values, submitArticle } = useArticleForm();
     return(
-        <div>
-          <form onSubmit={submit}>
-             <h1>Add an article</h1>
+        <div className='article-form-container'>
+        <div className='add-article-content'>
+          <form onSubmit={submitArticle}>
+             <h1>Add an Article</h1>
              <label>Article Name</label>
              <input 
-             type='text' 
+             type='text'
              name='articleName'
              placeholder='Enter article name'
              value={values.articleName}
-             onChange={change}
+             onChange={changeArticle}
              />
              <label>Article URL</label>
              <input 
@@ -21,10 +23,10 @@ export default function AddArticle(){
              name='articleURL'
              placeholder='Enter article url'
              value={values.articleURL}
-             onChange={change}
+             onChange={changeArticle}
              />
              <label>Category</label>
-             <select value={values.category} onChange={change} name='category'>
+             <select value={values.category} onChange={changeArticle} name='category'>
                 <option value=''>--Select One--</option>
                 <option value='auto'>Auto</option>
                 <option value='business'>Business</option>
@@ -43,7 +45,7 @@ export default function AddArticle(){
                 <option value='other'>Other</option>
             </select>
             <label>Importance</label>
-            <select value={values.rating} onChange={change} name='rating'>
+            <select value={values.rating} onChange={changeArticle} name='rating'>
                 <option value=''>--Select One--</option>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
@@ -51,8 +53,9 @@ export default function AddArticle(){
                 <option value='4'>4</option>
                 <option value='5'>5</option>
             </select>
-            <button>Add Article</button>
+            <button className='article-button'>Add Article</button>
           </form>
+        </div>
         </div>
     )
 }

@@ -28,7 +28,7 @@ export default function useForm() {
 
   const postNewUser = (newUser) => {
       axios
-      .post("/api/auth/register", newUser)
+      .post("#", newUser)
       .then((res) => {
           setUser([res.data, ...user]);
           setFormValues(defaultValues);

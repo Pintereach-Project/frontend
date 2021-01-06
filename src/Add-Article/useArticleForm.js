@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import * as yup from 'yup';
 import axios from 'axios';
 
-const values = {
+const initialValues = {
     articleName:'',
     articleURL:'',
     category:'',
@@ -19,17 +18,27 @@ const values = {
 
 export default function useArticleForm() {
   const [articles, setArticles] = useState(initialArticles);
-  const [values, setValues] = useState(values);
+  const [values, setValues] = useState(initialValues);
 //   const [formErrors, setFormErrors] = useState(defaultErrors);
   
-
-  const change = (evt) => {
+  const postNewArticle = (newArticle) => {
+    axios
+    .post("#", newArticle)
+    .then((res) => {
+        setArticles([...articles, newArticle]);
+        setValues(initialValues);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+}
+  const changeArticle = (evt) => {
       const { name, value } = evt.target;
       setValues({...values, [name]: value});
     
   };
 
-  const submit = (evt) =>{
+  const submitArticle = (evt) =>{
       evt.preventDefault();
     const newArticle = {
         articleName:values.articleName,
@@ -37,9 +46,8 @@ export default function useArticleForm() {
         category:values.category,
         rating:values.rating
     };
-    setArticles([...articles, newArticle]);
-    setValues(values);
+    postNewArticle(newArticle);
 }
-return ( { change , values, submit }); 
+return ( { changeArticle , values, submitArticle }); 
 
 }
