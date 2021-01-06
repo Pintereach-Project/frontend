@@ -19,13 +19,13 @@ const defaultValues = {
     password:'',
   };
   const initialUser = [];
-  const initialDisable = true;
+  
 
 export default function useForm() {
   const [user, setUser] = useState(initialUser);
   const [formValues, setFormValues] = useState(defaultValues);
   const [formErrors, setFormErrors] = useState(defaultErrors);
-  const [disable, setDisable] = useState(initialDisable);
+  
 
   const postNewUser = (newUser) => {
       axios

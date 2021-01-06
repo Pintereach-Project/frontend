@@ -1,5 +1,6 @@
 import React from 'react';
 import useForm from './useForm';
+import './FormReg.css';
 
 
 export default function FormReg(){
@@ -18,10 +19,13 @@ export default function FormReg(){
     // }
 
     return(
-        <div className='form-content-right'>
+        <div className='form-container'>
+            <div className='form-content-left'></div>
+            <div className='form-content-right'>
             <form onSubmit={submitRegForm} className='form'>
                 <h1>Register Today!</h1> 
-                <label>Name
+                <div className='input-div'>
+                    <label>Name</label>
                     <input 
                     type='text'
                     name='name'
@@ -29,11 +33,12 @@ export default function FormReg(){
                     value={formValues.name}
                     onChange={changeReg}
                     />
-                </label>
-                <div>
-                    <p>{formErrors.name}</p>
+                    <div>
+                        <p>{formErrors.name}</p>
+                    </div>
                 </div>
-                <label>Email
+                <div className='input-div'>
+                    <label>Email</label>
                     <input 
                     type='email'
                     name='email'
@@ -41,11 +46,12 @@ export default function FormReg(){
                     value={formValues.email}
                     onChange={changeReg}
                     />
-                </label>
-                <div>
-                    <p>{formErrors.email}</p>
+                    <div>
+                        <p>{formErrors.email}</p>
+                    </div>
                 </div>
-                <label>Password
+                <div className='input-div'>
+                    <label>Password</label>
                     <input 
                     type='password'
                     name='password'
@@ -53,14 +59,14 @@ export default function FormReg(){
                     value={formValues.password}
                     onChange={changeReg}
                     />
-                </label>
-                <div>
-                    <p>{formErrors.password}</p>
+                    <div>
+                        <p>{formErrors.password}</p>
+                    </div>
                 </div>
                 <button>Sign Up</button>
                 <span>Already have an account? Login <a href='#'>here</a>.</span>
             </form>
-            
+            </div>
         </div>
     )
 }
