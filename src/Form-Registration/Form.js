@@ -5,6 +5,7 @@ export default function Form(){
     return(
         <div>
             <FormReg />
+            
         </div>
     )
 }
