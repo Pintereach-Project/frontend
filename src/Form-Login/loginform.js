@@ -11,7 +11,6 @@ const LoginForm = () => {
     return (
         <>
         <div className='form-container'>
-            <span className='close-btn'>x</span>
             <div className='form-content-left'>
                 <img className='form-img' src='img/pintereach.png' alt='logo' />
             </div>

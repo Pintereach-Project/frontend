@@ -20,7 +20,9 @@ export default function FormReg(){
 
     return(
         <div className='form-container'>
-            <div className='form-content-left'></div>
+            <div className='form-content-left'>
+            <img className='form-img' src='img/pintereach.png' alt='logo' />
+            </div>
             <div className='form-content-right'>
             <form onSubmit={submitRegForm} className='form'>
                 <h1>Register Today!</h1> 
@@ -64,7 +66,7 @@ export default function FormReg(){
                     </div>
                 </div>
                 <button>Sign Up</button>
-                <span>Already have an account? Login <a href='#'>here</a>.</span>
+                <span>Already have an account? Login <a href='/login'>here</a>.</span>
             </form>
             </div>
         </div>

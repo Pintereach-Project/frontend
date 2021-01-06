@@ -9,7 +9,7 @@ const Login = ({submitForm}) => {
     return (
         <div className='form-content-right'>
             <form className='form' onSubmit={handleSubmit}>
-                <h1>Welcome back to Pintereach! Please login below.</h1>
+                <h1>Welcome back to Pintereach! Please log in below.</h1>
                 <div className='form-inputs'>
                     <label 
                     htmlFor='email' 
@@ -47,11 +47,11 @@ const Login = ({submitForm}) => {
                 <button 
                 className='form-input-btn' 
                 type='submit'
-                >Log In
+                >Log in
                 </button>
                 <span 
                 className='form-input-login'
-                >Need an account? Sign up <a href='#'>here</a>
+                >Need an account? Register <a href='/register'>here</a>.
                 </span>
             </form>
         </div>
