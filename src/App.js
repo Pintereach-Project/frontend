@@ -1,11 +1,14 @@
 import React from 'react';
-import './App.css';
 import LoginForm from './loginform';
+import Form from './Form-Registration/Form';
+import axios from 'axios';
 
 function App() {
   return (
     <div className="App">
+      {/* to do - route to sign up and login*/}
       <LoginForm />
+      <Form />
     </div>
   );
 }
