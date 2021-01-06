@@ -3,6 +3,7 @@ import {useForm} from 'react-hook-form'
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
+import { axiosWithAuth, baseURL } from '../utils/axiosWithAuth';
 
 const Errors = styled.span`
 color:red;
@@ -20,7 +21,7 @@ const SignUp = () => {
         const {username, email, phone, password} = user 
         const newUser = {username, email, phone, password}
         console.log({newUser})
-        axios.post('https://pintereach-backend.herokuapp.com/', newUser)
+        axiosWithAuth().post(`${baseURL}/api/auth/register`, newUser)
         .then(res => {
             console.log(res.data.data[0]);
                 setValue("username", "");

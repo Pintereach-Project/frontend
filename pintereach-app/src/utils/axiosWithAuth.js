@@ -5,7 +5,7 @@ export const axiosWithAuth = () => {
     const token = localStorage.getItem('token');
 
     return axios.create({
-        baseURL: 'https://pintereach-backend.herokuapp.com/',
+        baseURL: 'https://pintereach-backend.herokuapp.com',
         headers: {
             Authorization: token,
         },
