@@ -1,0 +1,22 @@
+.article-form-container{
+    margin:auto;
+    width:60%;
+    border: 2px teal solid;
+}
+.add-article-content{
+    margin:auto;
+    margin-top: 10%;
+    width:60%;
+    color:white;
+    background-color: black;
+    
+    padding: 5%;
+    display:flex;
+    flex-direction: column;
+}
+.article-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}

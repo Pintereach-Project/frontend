@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Link } from 'react-router-dom';
 import * as yup from 'yup';
 import axios from 'axios';
 
@@ -29,7 +28,7 @@ export default function useForm() {
 
   const postNewUser = (newUser) => {
       axios
-      .post("/api/auth/register", newUser)
+      .post("#", newUser)
       .then((res) => {
           setUser([res.data, ...user]);
           setFormValues(defaultValues);

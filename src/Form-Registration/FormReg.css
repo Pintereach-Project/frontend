@@ -24,9 +24,7 @@ input {
     width: 100%;
     border: none;
 }
-textarea:focus, input:focus{
-    outline: none;
-}
+ 
 label {
     display: inline-block;
     font-size: 0.8rem;
