@@ -2,7 +2,9 @@ import React from 'react';
 import LoginForm from './Form-Login/loginform';
 import Form from './Form-Registration/Form';
 import AddArticleForm from './Add-Article/AddArticleForm';
-import axios from 'axios';
+
+import SavedArticles from './Saved-Articles/SavedArticles';
+
 
 import { Route, Link } from 'react-router-dom';
 import Navbar from './Navbar/Navbar';
@@ -20,7 +22,9 @@ function App() {
       <Route path='/addarticle'>
         <AddArticleForm />  
       </Route>
-      
+      <Route path='/saved-articles'>
+              <SavedArticles />  
+      </Route>
     </div>
   );
 }
