@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+    PageTitle,
     SavedArticleContainer,
     AddArticleBtn,
     SavedArticleForm,
@@ -20,7 +21,7 @@ import {
 const SavedArticles = () => {
     return (
         <SavedArticleContainer>
-            <AddArticleBtn href='/add-article'>Add an article</AddArticleBtn>
+            <PageTitle>Saved Articles</PageTitle>
             <SavedArticleForm>
                 <FormDiv>
                     <FormLabel>Display articles by category:</FormLabel>
@@ -42,20 +43,21 @@ const SavedArticles = () => {
                         <option value='technology'>Technology</option>
                         <option value='other'>Other</option>
                     </SelectCategory>
+                    <ResetBtn>Reset Category</ResetBtn>
                 </FormDiv>
             </SavedArticleForm>
             <SavedArticlesDiv>
                 <ArticleCard>
                     <DeleteBtn>X</DeleteBtn>
                     <ArticleInfo>
-                        <Title></Title>
-                        <Category>News</Category>
-                        <Rating>5</Rating>
+                        <Title>Title</Title>
+                        <Category>Category: News</Category>
+                        <Rating>Importance: 5</Rating>
                     </ArticleInfo>
                     <GoToBtn>Read Article</GoToBtn>
                 </ArticleCard>
             </SavedArticlesDiv>
-            <ResetBtn>Reset</ResetBtn>
+            <AddArticleBtn href='/add-article'>Add an Article</AddArticleBtn>
         </SavedArticleContainer>
     )
 }
