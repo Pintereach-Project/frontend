@@ -18,7 +18,7 @@ function App() {
         <Form />
       </Route>
       <Route path='/addarticle'>
-              <AddArticleForm />  
+        <AddArticleForm />  
       </Route>
       
     </div>
