@@ -10,7 +10,7 @@ export default function AddArticle(){
         <div className='article-form-container'>
         
         <div className='add-article-content'>
-          <form onSubmit={submitArticle}>
+          <form className='articleForm' onSubmit={submitArticle}>
             <h1>Add an Article</h1>
             <div className='text-input'>
                 <label>Article Name</label>
@@ -68,7 +68,7 @@ export default function AddArticle(){
           </form>
         </div>
         <div className='right-content'>
-            <div className='picture'><img src={smartphone}></img> </div>
+            <img className='articleImage' src={smartphone}></img> 
         </div>
         </div>
     )
