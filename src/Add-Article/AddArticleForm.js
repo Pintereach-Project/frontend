@@ -1,6 +1,8 @@
 import React from 'react';
 import useArticleForm from './useArticleForm';
 import './AddArticle.css';
+import newsImage from '../Add-Article/newsImage.jpg';
+import smartphone from './smartphoto.png';
 
 export default function AddArticle(){
     const { changeArticle, values, submitArticle } = useArticleForm();
@@ -66,7 +68,7 @@ export default function AddArticle(){
           </form>
         </div>
         <div className='right-content'>
-            <div className='picture'>Picture Here</div>
+            <div className='picture'><img src={smartphone}></img> </div>
         </div>
         </div>
     )
