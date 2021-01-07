@@ -8,12 +8,12 @@ import SchemaReg from './SchemaReg';
 
 
 const defaultValues = {
-    name:'',
+    username:'',
     email:'',
     password:'',
   };
   const defaultErrors = {
-    name:'',
+    username:'',
     email:'',
     password:'',
   };
@@ -28,8 +28,9 @@ export default function useForm() {
 
   const postNewUser = (newUser) => {
       axios
-      .post("#", newUser)
+      .post("https://pintereach-backend.herokuapp.com/api/auth/register", newUser)
       .then((res) => {
+          console.log(res.data);
           setUser([res.data, ...user]);
           setFormValues(defaultValues);
       })
@@ -56,7 +57,7 @@ export default function useForm() {
   const submitRegForm = (evt) =>{
       evt.preventDefault();
     const newUser = {
-      name:formValues.name,
+      username:formValues.username,
       email:formValues.email,
       password:formValues.password,
     };

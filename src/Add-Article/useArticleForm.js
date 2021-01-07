@@ -23,7 +23,7 @@ export default function useArticleForm() {
   
   const postNewArticle = (newArticle) => {
     axios
-    .post("#", newArticle)
+    .post("https://pintereach-backend.herokuapp.com", newArticle)
     .then((res) => {
         setArticles([...articles, newArticle]);
         setValues(initialValues);

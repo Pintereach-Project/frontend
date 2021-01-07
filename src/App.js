@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginForm from './Form-Login/loginform';
 import Form from './Form-Registration/Form';
-import AddArticle from './Add-Article/AddArticleForm';
+import AddArticleForm from './Add-Article/AddArticleForm';
 import axios from 'axios';
 
 import { Route, Link } from 'react-router-dom';
@@ -17,8 +17,8 @@ function App() {
       <Route path='/register'>
         <Form />
       </Route>
-      <Route path='/add-article'>
-              <AddArticle />  
+      <Route path='/addarticle'>
+              <AddArticleForm />  
       </Route>
       
     </div>

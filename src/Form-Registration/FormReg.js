@@ -30,9 +30,9 @@ export default function FormReg(){
                     <label>Name</label>
                     <input 
                     type='text'
-                    name='name'
+                    name='username'
                     placeholder='Enter your name'
-                    value={formValues.name}
+                    value={formValues.username}
                     onChange={changeReg}
                     />
                     <div>
