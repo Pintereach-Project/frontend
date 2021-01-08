@@ -12,20 +12,20 @@ const Login = ({submitForm}) => {
                 <h1>Welcome back to Pintereach! Please log in below.</h1>
                 <div className='form-inputs'>
                     <label 
-                    htmlFor='email' 
+                    htmlFor='username' 
                     className='form-label'
-                    >Email
+                    >Username
                     </label>
                     <input
-                    id='email'
-                    type='email' 
-                    name='email' 
+                    id='username'
+                    type='username' 
+                    name='username' 
                     className='form-input'
-                    placeholder='Enter your email'
-                    value={values.email}
+                    placeholder='Enter your username'
+                    value={values.username}
                     onChange={handleChange}
                     />
-                    {errors.email && <p>{errors.email}</p>}
+                    {errors.username && <p>{errors.username}</p>}
                 </div>
                 <div className='form-inputs'>
                     <label 

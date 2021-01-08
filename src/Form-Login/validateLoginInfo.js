@@ -1,10 +1,10 @@
 export default function validateLoginInfo(values) {
     let errors = {}
 
-    if(!values.email.trim()) {
-        errors.email = 'Email required'
-    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-        errors.email = 'Email address is invalid';
+    if(!values.username.trim()) {
+        errors.username = 'Username required'
+    } else if (!/\S+@\S+\.\S+/.test(values.username)) {
+        errors.username = 'Email address is invalid';
     }
 
     if (!values.password) {

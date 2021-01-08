@@ -9,12 +9,6 @@ import {
     SelectCategory,
     ResetBtn,
     SavedArticlesDiv,
-    DeleteBtn,
-    ArticleInfo,
-    Title,
-    Rating,
-    Category,
-    GoToBtn,
 } from './SavedArticlesStyling';
 import axios from 'axios';
 import ArticleCard from '../Articles/ArticleCard';
