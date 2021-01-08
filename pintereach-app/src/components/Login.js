@@ -1,5 +1,5 @@
 import React from 'react'
-import { axiosWithAuth, baseURL } from '../utils/axiosWithAuth';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 import {useForm} from 'react-hook-form';
 import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
@@ -18,12 +18,13 @@ const Login = () => {
     
     const onSubmit = (userCredentials) => {
     console.log(userCredentials);
-    axiosWithAuth().post(`${baseURL}/api/auth/login`, userCredentials)
+    axiosWithAuth().post('https://pintereach-backend.herokuapp.com/api/auth/login', userCredentials)
     .then(res => {
         localStorage.setItem('token', res.data.token);
             setValue("username", "");
             setValue("password", "");
-            history.push('/logged-in')
+            history.push('/admin')
+            console.log(userCredentials);
        
     })
     .catch(err => console.log(err))
