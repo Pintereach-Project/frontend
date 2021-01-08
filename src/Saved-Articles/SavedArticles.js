@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     PageTitle,
     SavedArticleContainer,
@@ -9,7 +9,6 @@ import {
     SelectCategory,
     ResetBtn,
     SavedArticlesDiv,
-    ArticleCard,
     DeleteBtn,
     ArticleInfo,
     Title,
@@ -17,8 +16,25 @@ import {
     Category,
     GoToBtn,
 } from './SavedArticlesStyling';
+import axios from 'axios';
+import ArticleCard from '../Articles/ArticleCard';
 
-const SavedArticles = () => {
+
+const baseURL = 'https://pintereach-backend.herokuapp.com'
+
+const SavedArticles = (props) => {
+    const [articleData, setArticleData] = useState([]);
+
+    useEffect(() => {
+        axios
+        .get(`${baseURL}/api/saved-articles/:userId`)
+        .then(res => {
+            setArticleData(res.data)
+        })
+        .catch(err => console.log(err))
+     }, [])
+    
+
     return (
         <SavedArticleContainer>
             <PageTitle>Saved Articles</PageTitle>
@@ -47,17 +63,13 @@ const SavedArticles = () => {
                 </FormDiv>
             </SavedArticleForm>
             <SavedArticlesDiv>
-                <ArticleCard>
-                    <DeleteBtn>X</DeleteBtn>
-                    <ArticleInfo>
-                        <Title>Title</Title>
-                        <Category>Category: News</Category>
-                        <Rating>Importance: 5</Rating>
-                    </ArticleInfo>
-                    <GoToBtn>Read Article</GoToBtn>
-                </ArticleCard>
+            {articleData.map(article => {
+                    return (
+                        <ArticleCard article={article} />
+                    )
+                })}
             </SavedArticlesDiv>
-            <AddArticleBtn href='/add-article'>Add an Article</AddArticleBtn>
+            <AddArticleBtn href='/addarticle'>Add an Article</AddArticleBtn>
         </SavedArticleContainer>
     )
 }
