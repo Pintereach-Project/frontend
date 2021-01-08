@@ -27,11 +27,11 @@ export default function FormReg(){
             <form onSubmit={submitRegForm} className='form'>
                 <h1>Register Today!</h1> 
                 <div className='input-div'>
-                    <label>Name</label>
+                    <label>Username</label>
                     <input 
                     type='text'
                     name='username'
-                    placeholder='Enter your name'
+                    placeholder='Enter your username'
                     value={formValues.username}
                     onChange={changeReg}
                     />

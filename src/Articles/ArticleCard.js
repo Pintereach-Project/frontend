@@ -6,7 +6,7 @@ import {
     Title,
     Content
 } from './ArticlesStying';
-
+import CatRankForm from './CatRankForm';
 
 
 const ArticleCard = (props) => {
@@ -33,6 +33,9 @@ const ArticleCard = (props) => {
             )}
             {!props.save && (
                 <button onClick={handleDeleteArticle}>Delete Article</button>
+            )}
+            {!props.save && (
+                <CatRankForm />
             )}
         </ArticleCardContainer>
     )

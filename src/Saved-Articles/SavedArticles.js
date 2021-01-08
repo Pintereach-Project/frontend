@@ -9,12 +9,6 @@ import {
     SelectCategory,
     ResetBtn,
     SavedArticlesDiv,
-    DeleteBtn,
-    ArticleInfo,
-    Title,
-    Rating,
-    Category,
-    GoToBtn,
 } from './SavedArticlesStyling';
 import axios from 'axios';
 import ArticleCard from '../Articles/ArticleCard';
@@ -55,6 +49,7 @@ const SavedArticles = (props) => {
                         <option value='movies'>Movies</option>
                         <option value='music'>Music</option>
                         <option value='news'>News</option>
+                        <option value='politics'>Politics</option>
                         <option value='sports'>Sports</option>
                         <option value='technology'>Technology</option>
                         <option value='other'>Other</option>
