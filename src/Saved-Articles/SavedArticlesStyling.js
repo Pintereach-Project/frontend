@@ -13,7 +13,7 @@ export const SavedArticleContainer = styled.div`
 export const PageTitle = styled.h1`
   color: #fff;
   padding: 30px;
-`
+`;
 
 export const AddArticleBtn = styled.a`
     width: 300px;
@@ -82,6 +82,7 @@ export const SavedArticlesDiv = styled.div`
     margin: 15px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 `;
 
 export const ArticleCard = styled.div`

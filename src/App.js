@@ -2,7 +2,7 @@ import React from 'react';
 import LoginForm from './Form-Login/loginform';
 import Form from './Form-Registration/Form';
 import AddArticleForm from './Add-Article/AddArticleForm';
-
+import Articles from './Articles/Articles';
 import SavedArticles from './Saved-Articles/SavedArticles';
 
 
@@ -24,6 +24,9 @@ function App() {
       </Route>
       <Route path='/saved-articles'>
               <SavedArticles />  
+      </Route>
+      <Route path='/articles'>
+              <Articles />  
       </Route>
     </div>
   );
